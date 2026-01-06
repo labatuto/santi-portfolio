@@ -477,6 +477,25 @@ nav {
   height: 14px;
   accent-color: var(--accent);
   cursor: pointer;
+  border: 2px solid var(--text-secondary);
+  border-radius: 2px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-primary);
+}
+
+.filter-menu input[type="checkbox"]:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-menu input[type="checkbox"]:checked::after {
+  content: '✓';
+  display: block;
+  color: var(--bg-primary);
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
 }
 
 .no-results {
