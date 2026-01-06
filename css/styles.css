@@ -302,6 +302,31 @@ nav {
   font-size: 0.85rem;
 }
 
+/* Featured Work */
+.featured-work {
+  list-style: none;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.featured-work li {
+  padding: 0.6rem 0;
+}
+
+.featured-work a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+
+.featured-work .meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
 /* Writing Controls */
 .writing-controls {
   margin-bottom: var(--space-md);
