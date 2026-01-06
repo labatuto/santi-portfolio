@@ -218,9 +218,14 @@ async function loadWritingData() {
     if (!response.ok) throw new Error('Failed to load');
     WRITING_DATA = await response.json();
 
-    // Extract unique publications
-    const pubs = new Set(WRITING_DATA.map(a => a.publication));
-    PUBLICATIONS = Array.from(pubs).sort();
+    // Count articles per publication and sort by count
+    const pubCounts = {};
+    WRITING_DATA.forEach(a => {
+      pubCounts[a.publication] = (pubCounts[a.publication] || 0) + 1;
+    });
+    PUBLICATIONS = Object.entries(pubCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([pub, count]) => ({ name: pub, count }));
 
     setupFilters();
     setupSearch();
@@ -278,7 +283,7 @@ function setupFilters() {
 
   let html = '';
   PUBLICATIONS.forEach(pub => {
-    html += `<label><input type="checkbox" value="${pub}"> <em>${pub}</em></label>`;
+    html += `<label><input type="checkbox" value="${pub.name}"> <em>${pub.name}</em> (${pub.count})</label>`;
   });
   filterContainer.innerHTML = html;
 
