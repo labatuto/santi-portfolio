@@ -151,8 +151,14 @@ function displayCurrentBook(book) {
   const container = document.getElementById('current-book');
   if (!container) return;
 
-  const coverHtml = book.imageUrl
-    ? `<div class="current-book-cover"><img src="${book.imageUrl}" alt="${book.title}"></div>`
+  // Get larger image from Goodreads by replacing size suffix
+  let largeImageUrl = book.imageUrl;
+  if (largeImageUrl) {
+    largeImageUrl = largeImageUrl.replace(/\._S[XY]\d+_\./, '._SY200_.');
+  }
+
+  const coverHtml = largeImageUrl
+    ? `<div class="current-book-cover"><img src="${largeImageUrl}" alt="${book.title}"></div>`
     : '';
 
   container.innerHTML = `
