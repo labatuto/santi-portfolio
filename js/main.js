@@ -332,7 +332,7 @@ const FEATURED_ARTICLES = [
     title: 'The Ezra Klein Show: Santi Ruiz',
     publication: 'New York Times',
     url: 'https://www.nytimes.com/2025/03/25/opinion/ezra-klein-podcast-santi-ruiz.html',
-    image: 'https://static01.nyt.com/images/2020/04/28/podcasts/ezra-klein-album-art/ezra-klein-album-art-square320-v4.png'
+    image: 'https://static01.nyt.com/images/2025/03/25/multimedia/25ezra-klein-ruiz-qjvl/25ezra-klein-ruiz-qjvl-superJumbo.jpg'
   },
   {
     title: 'Technocapital Is Eating My Brains',
@@ -381,6 +381,24 @@ const FEATURED_ARTICLES = [
     publication: 'Washington Free Beacon',
     url: 'https://freebeacon.com/culture/land-back/',
     image: 'https://freebeacon.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.38.52-PM-e1621615157631.png'
+  },
+  {
+    title: 'Should You Watch People Die',
+    publication: 'Regress Studies',
+    url: 'https://regressstudies.substack.com/p/should-you-watch-people-die',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/95e768da-ec7f-4942-bd42-cbed80ed5ddf_600x400.jpeg'
+  },
+  {
+    title: 'Connection Failure',
+    publication: 'Washington Free Beacon',
+    url: 'https://freebeacon.com/culture/connection-failure/',
+    image: 'https://freebeacon.com/wp-content/uploads/2021/08/GettyImages-944480656_736x514.jpg'
+  },
+  {
+    title: 'The Five Things President Trump Should Do on Day One',
+    publication: 'The Free Press',
+    url: 'https://www.thefp.com/p/the-five-things-president-trump-should-do',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/305ed790-5f16-4a23-9254-00d0bf4818d6_1024x688.jpeg'
   }
 ];
 
