@@ -324,10 +324,120 @@ function formatDate(dateStr) {
 }
 
 // ===========================================
+// FEATURED WORK FUNCTIONS
+// ===========================================
+
+const FEATURED_ARTICLES = [
+  {
+    title: 'The Ezra Klein Show: Santi Ruiz',
+    publication: 'New York Times',
+    url: 'https://www.nytimes.com/2025/03/25/opinion/ezra-klein-podcast-santi-ruiz-doge.html',
+    image: 'https://static01.nyt.com/images/2020/04/28/podcasts/ezra-klein-album-art/ezra-klein-album-art-square320-v4.png'
+  },
+  {
+    title: 'Technocapital Is Eating My Brains',
+    publication: 'Regress Studies',
+    url: 'https://regressstudies.substack.com/p/technocapital-is-eating-my-brains',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/697952d0-d4e1-478b-a467-5f20874457f6_2455x2951.jpeg'
+  },
+  {
+    title: 'Better Living Through Group Chemistry',
+    publication: 'Asterisk',
+    url: 'https://asteriskmag.com/issues/06/better-living-through-group-chemistry',
+    image: 'https://asteriskmag.com/media/pages/issues/06/8d32f17406-1712585107/issue_06_cover_web-1200x630-crop.jpg'
+  },
+  {
+    title: 'Bring Back the Bison',
+    publication: 'National Review',
+    url: 'https://www.nationalreview.com/2020/09/bring-back-the-bison/',
+    image: 'https://i0.wp.com/www.nationalreview.com/wp-content/uploads/2020/09/bison-wyoming.jpg?fit=2057%2C1200&ssl=1'
+  },
+  {
+    title: 'Intermission at the Ministry of Truth',
+    publication: 'Pirate Wires',
+    url: 'https://www.piratewires.com/p/intermission-at-the-ministry-of-truth',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/8af910ad-4e10-479d-95c2-ce3e7239ccd9_1280x720.jpeg'
+  },
+  {
+    title: 'How to Stage a Coup',
+    publication: 'Statecraft',
+    url: 'https://www.statecraft.pub/p/how-to-commit-a-coup',
+    image: 'https://substack-video.s3.amazonaws.com/video_upload/post/152873301/bd23e29e-e434-4a53-9562-cbd7c45d7466/transcoded-1733854297.png'
+  },
+  {
+    title: 'How to Stop Losing 17,500 Kidneys',
+    publication: 'Statecraft',
+    url: 'https://www.statecraft.pub/p/how-to-stop-losing-17500-kidneys',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/3909aacc-6ecc-4a74-b8a9-8b676d8fb0ed_720x538.jpeg'
+  },
+  {
+    title: 'How to Save DC\'s Metro',
+    publication: 'Statecraft',
+    url: 'https://www.statecraft.pub/p/how-to-save-dcs-metro',
+    image: 'https://substack-video.s3.amazonaws.com/video_upload/post/165221347/b541c9df-ebd8-427b-b837-81c26cf91981/transcoded-1749070293.png'
+  },
+  {
+    title: 'Land Back!',
+    publication: 'Washington Free Beacon',
+    url: 'https://freebeacon.com/culture/land-back/',
+    image: 'https://freebeacon.com/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.38.52-PM-e1621615157631.png'
+  }
+];
+
+// DOGE articles are always shown together
+const DOGE_PAIR = [
+  {
+    title: '50 Thoughts on DOGE',
+    publication: 'Statecraft',
+    url: 'https://www.statecraft.pub/p/50-thoughts-on-doge',
+    image: 'https://substack-video.s3.amazonaws.com/video_upload/post/158517661/3cbdbd17-4621-4a09-ade8-3dbcc39bba1e/transcoded-1741357522.png'
+  },
+  {
+    title: 'More (Brief) Thoughts On DOGE',
+    publication: 'Statecraft',
+    url: 'https://www.statecraft.pub/p/more-brief-thoughts-on-doge',
+    image: 'https://substack-post-media.s3.amazonaws.com/public/images/330a6d56-63f9-4b3e-bc65-a845c931c159_299x168.jpeg'
+  }
+];
+
+function loadFeaturedWork() {
+  const container = document.getElementById('featured-work');
+  if (!container) return;
+
+  // Shuffle and pick articles
+  const shuffled = [...FEATURED_ARTICLES].sort(() => Math.random() - 0.5);
+
+  // Randomly decide if DOGE pair is included (50% chance)
+  const includeDoge = Math.random() < 0.5;
+
+  let selected = [];
+  if (includeDoge) {
+    // Show DOGE pair + 1 other article
+    selected = [...DOGE_PAIR, shuffled[0]];
+  } else {
+    // Show 3 random articles
+    selected = shuffled.slice(0, 3);
+  }
+
+  container.innerHTML = selected.map(article => `
+    <li class="featured-item">
+      <a href="${article.url}" target="_blank" class="featured-link">
+        <img src="${article.image}" alt="" class="featured-image" onerror="this.style.display='none'">
+        <div class="featured-text">
+          <span class="featured-title">${article.title}</span>
+          <span class="featured-meta"><em>${article.publication}</em></span>
+        </div>
+      </a>
+    </li>
+  `).join('');
+}
+
+// ===========================================
 // INITIALIZATION
 // ===========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  loadFeaturedWork();
   loadGoodreads();
   loadWritingData();
 });
