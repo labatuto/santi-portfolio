@@ -36,6 +36,41 @@ RSS_FEED = os.path.join(ROOT_DIR, 'feed.xml')
 # Goodreads config
 GOODREADS_USER_ID = '45140929-santi-ruiz'
 
+# Articles to never add (blocklist patterns - case insensitive)
+BLOCKED_TITLES = [
+    'Experts Worry Biden FCC Pick Will Use Post To Attack Conservatives',
+    'Blackburn Says YouTube Dinged Channel at Behest of CCP',
+    'Microsoft Exec Says China Leads the World in Pandemic Response',
+    'Blackburn Says Facebook Whistleblower',
+    'Facebook, Instagram Suffer Widespread Outage',
+    'GOP Congresswoman Asks Facebook To Explain Suspension of Gold Star Mother',
+    'Twitter Automatically Recommends Users Follow Taliban Accounts',
+    'Hispanic Groups Push Biden To Dump Progressive FCC Nominee',
+    'Bezos \'Greases\' Way Into Dem Establishment',
+    'Facebook Changes Name to \'Meta\'',
+    'Chinese Propaganda Dominates Search Results for US Military Base',
+    'Klobuchar Staffer Announces Apple Gig Hours After Senator Slams Big Tech Revolving Door',
+    'Senators Slam Facebook for Adverse Effect on Teens',
+    'Amazon Blocks Ad for Book Critical of Black Lives Matter',
+    'Facebook Blocks Ad For Song Critical of Biden',
+    'Gettr',
+    'Biden Declares Cybersecurity \'Core National Security Challenge\'',
+    'Experts Say Apple\'s Child Porn Detection Tool Is Less Accurate',
+    'Critics Say Apple Keeps Its App Store Closed to Aid Chinese Censorship',
+    'Facebook Oversight Board Punts on Trump Ban Decision',
+    'Blackburn Calls Biden FTC Nominee \'Not Aggressive Enough\'',
+    'Democrats Descend into Twitter War With Amazon',
+    'Cruz Calls For Scrutiny of Platforms That Halted GameStop',
+    'Day Traders Face Massive Pushback From Social Media',
+    'Twitter Opens Floodgates to Public Moderation',
+    'Lincoln Project\'s Tweets of Private DMs',
+]
+
+def is_blocked(title):
+    """Check if a title matches any blocked pattern"""
+    title_lower = title.lower()
+    return any(pattern.lower() in title_lower for pattern in BLOCKED_TITLES)
+
 def fetch(url, timeout=20):
     """Fetch a URL with SSL verification disabled (for RSS feeds)"""
     ctx = ssl.create_default_context()
@@ -192,6 +227,8 @@ def check_freebeacon():
         for m in re.finditer(r'<item>.*?<title>(?:<!\[CDATA\[)?([^<\]]+)(?:\]\]>)?</title>.*?<link>([^<]+)</link>', xml, re.DOTALL):
             title, article_url = m.groups()
             if article_url in existing_urls:
+                continue
+            if is_blocked(title):
                 continue
 
             print(f'   Found new: {title[:50]}...')
