@@ -151,8 +151,13 @@ function displayCurrentBook(book) {
   const container = document.getElementById('current-book');
   if (!container) return;
 
+  const coverHtml = book.imageUrl
+    ? `<div class="current-book-cover"><img src="${book.imageUrl}" alt="${book.title}"></div>`
+    : '';
+
   container.innerHTML = `
     <div class="book current-book-display">
+      ${coverHtml}
       <div class="book-info">
         <a href="${book.link}" target="_blank" class="book-title">${book.title}</a>
         <span class="book-author">${book.author}</span>
@@ -267,7 +272,7 @@ function setupFilters() {
 
   let html = '';
   PUBLICATIONS.forEach(pub => {
-    html += `<label><input type="checkbox" value="${pub}"> ${pub}</label>`;
+    html += `<label><input type="checkbox" value="${pub}"> <em>${pub}</em></label>`;
   });
   filterContainer.innerHTML = html;
 

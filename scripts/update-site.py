@@ -27,9 +27,11 @@ from datetime import datetime
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(SCRIPT_DIR, '..', 'data')
+ROOT_DIR = os.path.join(SCRIPT_DIR, '..')
+DATA_DIR = os.path.join(ROOT_DIR, 'data')
 WRITING_JSON = os.path.join(DATA_DIR, 'writing.json')
 GOODREADS_CACHE = os.path.join(DATA_DIR, 'goodreads-cache.json')
+RSS_FEED = os.path.join(ROOT_DIR, 'feed.xml')
 
 # Goodreads config
 GOODREADS_USER_ID = '45140929-santi-ruiz'
@@ -240,6 +242,52 @@ def update_articles():
     else:
         print('\n✓ No new articles found')
 
+def regenerate_rss():
+    """Regenerate the RSS feed from writing.json"""
+    print('\n📡 Regenerating RSS feed...')
+
+    import html as html_module
+
+    with open(WRITING_JSON) as f:
+        articles = json.load(f)
+
+    articles.sort(key=lambda x: x['date'], reverse=True)
+
+    build_date = datetime.now().strftime('%a, %d %b %Y %H:%M:%S +0000')
+
+    rss = f'''<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Santi Ruiz - Selected Work</title>
+  <link>https://labatuto.github.io/santi-portfolio/</link>
+  <description>Writing and interviews by Santi Ruiz</description>
+  <language>en-us</language>
+  <lastBuildDate>{build_date}</lastBuildDate>
+  <atom:link href="https://labatuto.github.io/santi-portfolio/feed.xml" rel="self" type="application/rss+xml"/>
+'''
+
+    for article in articles[:50]:
+        pub_date = datetime.strptime(article['date'], '%Y-%m-%d').strftime('%a, %d %b %Y 00:00:00 +0000')
+        title = html_module.escape(article['title'])
+        description = html_module.escape(f"Published in {article['publication']}")
+
+        rss += f'''  <item>
+    <title>{title}</title>
+    <link>{article['url']}</link>
+    <description>{description}</description>
+    <pubDate>{pub_date}</pubDate>
+    <guid isPermaLink="true">{article['url']}</guid>
+  </item>
+'''
+
+    rss += '''</channel>
+</rss>'''
+
+    with open(RSS_FEED, 'w') as f:
+        f.write(rss)
+
+    print(f'   ✓ RSS feed updated with {min(50, len(articles))} items')
+
 def main():
     args = sys.argv[1:]
 
@@ -252,6 +300,9 @@ def main():
 
     if not args or '--articles' in args:
         update_articles()
+
+    # Always regenerate RSS
+    regenerate_rss()
 
     print('\n✓ Done!')
     print('=' * 50)
