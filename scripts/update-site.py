@@ -68,8 +68,9 @@ BLOCKED_TITLES = [
 
 def is_blocked(title):
     """Check if a title matches any blocked pattern"""
-    title_lower = title.lower()
-    return any(pattern.lower() in title_lower for pattern in BLOCKED_TITLES)
+    # Normalize the title (unescape HTML entities)
+    title_clean = unescape(title).lower()
+    return any(pattern.lower() in title_clean for pattern in BLOCKED_TITLES)
 
 def fetch(url, timeout=20):
     """Fetch a URL with SSL verification disabled (for RSS feeds)"""
