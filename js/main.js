@@ -331,7 +331,7 @@ const FEATURED_ARTICLES = [
   {
     title: 'The Ezra Klein Show: Santi Ruiz',
     publication: 'New York Times',
-    url: 'https://www.nytimes.com/2025/03/25/opinion/ezra-klein-podcast-santi-ruiz-doge.html',
+    url: 'https://www.nytimes.com/2025/03/25/opinion/ezra-klein-podcast-santi-ruiz.html',
     image: 'https://static01.nyt.com/images/2020/04/28/podcasts/ezra-klein-album-art/ezra-klein-album-art-square320-v4.png'
   },
   {
