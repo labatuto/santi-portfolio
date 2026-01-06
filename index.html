@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santi Ruiz</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="three-column">
+    <!-- Left Column: Photo + Bio -->
+    <aside class="left-column">
+      <div class="profile">
+        <img src="assets/headshot.jpg" alt="Santi Ruiz" class="headshot">
+        <h1>Santi Ruiz</h1>
+      </div>
+
+      <div class="bio">
+        <p>At the <a href="https://ifp.org">Institute for Progress</a>, I help our team communicate more effectively. I also write <a href="https://statecraft.pub">Statecraft</a>, a newsletter about how policy actually gets made.</p>
+        <p class="more-link"><a href="about.html">More about me →</a></p>
+      </div>
+
+      <div class="roles">
+        <h2>Also</h2>
+        <ul>
+          <li>
+            <span class="role-title">Board Member</span>
+            <span class="role-org"><a href="https://recodingamericafund.org">Recoding America Fund</a></span>
+          </li>
+          <li>
+            <span class="role-title">Journalist-in-Residence</span>
+            <span class="role-org">Johns Hopkins SOGP</span>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Center Column: All Writing -->
+    <section class="center-column">
+      <h2>Selected Writing</h2>
+      <div class="writing-controls">
+        <input type="text" id="writing-search" placeholder="Search..." class="search-input">
+        <div class="filter-dropdown">
+          <button class="filter-toggle" id="filter-toggle">Filter by outlet <span class="filter-count"></span></button>
+          <div class="filter-menu" id="filter-menu">
+            <div id="writing-filters"></div>
+          </div>
+        </div>
+      </div>
+      <ul class="writing-list" id="writing-list">
+        <!-- Writing will be populated here -->
+        <li class="loading">Loading writing archive...</li>
+      </ul>
+    </section>
+
+    <!-- Right Column: Reading -->
+    <aside class="right-column">
+      <div class="reading-section">
+        <h2>Reading</h2>
+        <div id="current-book" class="current-book">
+          <div class="book">
+            <div class="book-info">
+              <span class="book-title">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <div class="recent-books">
+          <span class="book-label">Recent</span>
+          <ul id="recent-books">
+            <li>Loading...</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="links-section">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="https://statecraft.pub" target="_blank">Statecraft</a></li>
+          <li><a href="https://twitter.com/rsanti97" target="_blank">Twitter</a></li>
+          <li><a href="mailto:santi@ifp.org">santi@ifp.org</a></li>
+          <li><a href="https://www.goodreads.com/user/show/45140929-santi-ruiz" target="_blank">Goodreads</a></li>
+          <li><a href="https://ifp.org/author/santi-ruiz/" target="_blank">IFP</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Live editing toggle - press Ctrl+E to enable/disable
+    let editMode = false;
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'e') {
+        e.preventDefault();
+        editMode = !editMode;
+        document.querySelectorAll('.bio p:first-child, h1, .role-title, .role-org').forEach(el => {
+          el.contentEditable = editMode;
+          el.style.outline = editMode ? '1px dashed #ccc' : 'none';
+        });
+        console.log(editMode ? 'Edit mode ON - click text to edit' : 'Edit mode OFF');
+      }
+    });
+  </script>
+</body>
+</html>

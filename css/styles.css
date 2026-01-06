@@ -1,0 +1,742 @@
+/* ===========================================
+   Santi Ruiz - Personal Website
+   Aesthetic: Warm Americana, subtle Art Deco
+   3-Column Layout
+   =========================================== */
+
+/* Self-hosted fonts */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/eb-garamond-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/inter-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/inter-600.woff2') format('woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Warmer cream palette */
+  --bg-primary: #F5EDE0;
+  --bg-secondary: #EBE1D1;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+
+  /* Accent colors */
+  --accent: #192C44;
+  --accent-hover: #2A4466;
+
+  /* Typography */
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* ===========================================
+   Typography
+   =========================================== */
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: var(--space-sm);
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ===========================================
+   Navigation
+   =========================================== */
+
+header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--space-md);
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* ===========================================
+   Three Column Layout
+   =========================================== */
+
+.three-column {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: 240px 1fr 200px;
+  gap: var(--space-lg);
+}
+
+/* Left Column */
+.left-column {
+  position: sticky;
+  top: var(--space-lg);
+  height: fit-content;
+}
+
+.profile {
+  margin-bottom: var(--space-md);
+}
+
+.headshot {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--bg-secondary);
+}
+
+.bio {
+  margin-bottom: var(--space-md);
+}
+
+.bio p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.bio .more-link {
+  margin-top: 0.75rem;
+}
+
+.bio .more-link a {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.bio .more-link a:hover {
+  color: var(--accent);
+}
+
+.roles {
+  margin-bottom: var(--space-md);
+}
+
+.roles ul {
+  list-style: none;
+}
+
+.roles li {
+  margin-bottom: var(--space-sm);
+}
+
+.role-title {
+  display: block;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.role-org {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.role-org a {
+  color: var(--text-secondary);
+}
+
+.role-org a:hover {
+  color: var(--accent);
+}
+
+.contact ul {
+  list-style: none;
+}
+
+.contact a {
+  font-size: 0.85rem;
+}
+
+/* Center Column */
+.center-column {
+  min-width: 0;
+}
+
+.featured-writing {
+  margin-bottom: var(--space-lg);
+}
+
+.writing-list {
+  list-style: none;
+}
+
+.writing-list li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.writing-list li:first-child {
+  border-top: 1px solid var(--bg-secondary);
+}
+
+.writing-list a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.writing-list .meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.view-all {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+}
+
+/* Writing Controls */
+.writing-controls {
+  margin-bottom: var(--space-md);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  border: 1px solid var(--bg-secondary);
+  border-radius: 4px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.filter-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-toggle {
+  padding: 0.4rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  border-bottom: 1px solid var(--text-secondary);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-toggle::after {
+  content: " ▾";
+  font-size: 0.6rem;
+}
+
+.filter-count:not(:empty) {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.filter-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-secondary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 100;
+  min-width: 200px;
+}
+
+.filter-menu.open {
+  display: block;
+}
+
+.filter-menu label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.filter-menu label:hover {
+  color: var(--accent);
+}
+
+.filter-menu input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.no-results {
+  padding: var(--space-md);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.writing-list .loading {
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Right Column */
+.right-column {
+  position: sticky;
+  top: 3rem;
+  height: fit-content;
+  align-self: start;
+}
+
+.reading-section {
+  padding: var(--space-sm);
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.book {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.book-cover {
+  width: 50px;
+  height: 75px;
+  background: var(--bg-primary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.book-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Current book - more prominent styling */
+.current-book-display {
+  margin-bottom: 0;
+}
+
+.current-book-display .book-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.current-book-display .book-author {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.recent-books {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--bg-primary);
+}
+
+.recent-books ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.recent-books li {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.recent-books li a {
+  display: block;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.recent-books li .book-author {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.15rem;
+}
+
+.book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.links-section {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.links-section ul {
+  list-style: none;
+}
+
+.links-section li {
+  margin-bottom: 0.5rem;
+}
+
+.links-section a {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.links-section a:hover {
+  color: var(--accent);
+}
+
+/* ===========================================
+   About Page
+   =========================================== */
+
+.about-page {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 3rem var(--space-md);
+}
+
+.about-nav {
+  margin-bottom: var(--space-lg);
+}
+
+.about-nav a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.about-nav a:hover {
+  color: var(--accent);
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  margin-bottom: var(--space-lg);
+}
+
+.about-section {
+  margin-bottom: var(--space-lg);
+}
+
+.about-section h2 {
+  font-size: 0.7rem;
+  margin-bottom: var(--space-sm);
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.about-section ul {
+  list-style: none;
+  margin-top: var(--space-sm);
+}
+
+.about-section li {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================================
+   Writing Page
+   =========================================== */
+
+.writing-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.writing-page h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.writing-intro {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.writing-archive {
+  list-style: none;
+}
+
+.writing-archive li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--bg-secondary);
+}
+
+.writing-archive li:first-child {
+  border-top: 1px solid var(--bg-secondary);
+}
+
+.article-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.article-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.article-publication {
+  font-style: italic;
+}
+
+.article-date::before {
+  content: " · ";
+}
+
+/* ===========================================
+   Responsive
+   =========================================== */
+
+@media (max-width: 900px) {
+  .three-column {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .right-column {
+    grid-column: 1 / -1;
+    position: static;
+  }
+
+  .reading-section {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .current-book {
+    flex: 1;
+  }
+
+  .recent-books {
+    flex: 1;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    padding-left: var(--space-md);
+    border-left: 1px solid var(--bg-primary);
+  }
+}
+
+@media (max-width: 650px) {
+  .three-column {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .left-column {
+    position: static;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .headshot {
+    width: 80px;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .reading-section {
+    flex-direction: column;
+  }
+
+  .recent-books {
+    padding-left: 0;
+    border-left: none;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--bg-primary);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .nav-links {
+    gap: var(--space-sm);
+  }
+}

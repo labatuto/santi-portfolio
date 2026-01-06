@@ -1,0 +1,121 @@
+{
+  "currentBooks": [
+    {
+      "title": "Really the Blues",
+      "author": "Mezz Mezzrow",
+      "link": "https://www.goodreads.com/review/show/8213612327?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347663680l/471934._SY75_.jpg"
+    },
+    {
+      "title": "See You on Sunday: A Cookbook for Family and Friends",
+      "author": "Sam Sifton",
+      "link": "https://www.goodreads.com/review/show/8195107451?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1573877353l/42526642._SX50_.jpg"
+    },
+    {
+      "title": "Dishoom: The first ever cookbook from the much-loved Indian restaurant",
+      "author": "Shamil Thakrar",
+      "link": "https://www.goodreads.com/review/show/8213608165?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1568670874l/44569827._SX50_.jpg"
+    },
+    {
+      "title": "The Maniac",
+      "author": "Benjam\u00edn Labatut",
+      "link": "https://www.goodreads.com/review/show/5927786673?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679411721l/75665931._SY75_.jpg"
+    },
+    {
+      "title": "The Cost of Good Intentions: New York City and the Liberal Experiment",
+      "author": "Charles R. Morris",
+      "link": "https://www.goodreads.com/review/show/7725686864?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347611180l/1208317._SX50_.jpg"
+    },
+    {
+      "title": "Ten Ways to Destroy the Imagination of Your Child",
+      "author": "Anthony Esolen",
+      "link": "https://www.goodreads.com/review/show/7764164246?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347635135l/9636237._SX50_.jpg"
+    },
+    {
+      "title": "Managing to Change the World: The Nonprofit Manager's Guide to Getting Results",
+      "author": "Alison  Green",
+      "link": "https://www.goodreads.com/review/show/6824666134?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348712807l/13044641._SX50_.jpg"
+    },
+    {
+      "title": "1491: New Revelations of the Americas Before Columbus",
+      "author": "Charles C. Mann",
+      "link": "https://www.goodreads.com/review/show/2434627409?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545238592l/39020._SY75_.jpg"
+    },
+    {
+      "title": "Bureaucracy: What Government Agencies Do and Why They Do It",
+      "author": "James Q. Wilson",
+      "link": "https://www.goodreads.com/review/show/6433128671?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1314925139l/62553._SY75_.jpg"
+    }
+  ],
+  "readBooks": [
+    {
+      "title": "Pale Fire",
+      "author": "Vladimir Nabokov",
+      "link": "https://www.goodreads.com/review/show/4361931725?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388155863l/7805._SY75_.jpg"
+    },
+    {
+      "title": "Maintenance of Everything: Part One",
+      "author": "Stewart Brand",
+      "link": "https://www.goodreads.com/review/show/8174021462?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760465408l/215581569._SX50_.jpg"
+    },
+    {
+      "title": "Trump: The Art of the Deal",
+      "author": "Donald J. Trump",
+      "link": "https://www.goodreads.com/review/show/8164967835?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1442705949l/1032._SY75_.jpg"
+    },
+    {
+      "title": "Chosen Country",
+      "author": "James Pogue",
+      "link": "https://www.goodreads.com/review/show/5959125912?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1508877584l/34857903._SY75_.jpg"
+    },
+    {
+      "title": "Sketches from a Life",
+      "author": "George F. Kennan",
+      "link": "https://www.goodreads.com/review/show/7906843840?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347534652l/1290642._SY75_.jpg"
+    },
+    {
+      "title": "Albion's Seed: Four British Folkways in America",
+      "author": "David Hackett Fischer",
+      "link": "https://www.goodreads.com/review/show/4362594770?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1370325181l/32081._SY75_.jpg"
+    },
+    {
+      "title": "The Unaccountability Machine: Why Big Systems Make Terrible Decisions - and How The World Lost its Mind",
+      "author": "Dan Davies",
+      "link": "https://www.goodreads.com/review/show/6344155252?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1716689664l/197716282._SY75_.jpg"
+    },
+    {
+      "title": "James and the Giant Peach",
+      "author": "Roald Dahl",
+      "link": "https://www.goodreads.com/review/show/1446045118?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320412586l/6689._SX50_.jpg"
+    },
+    {
+      "title": "Saving Can-Do: How to Revive the Spirit of America",
+      "author": "Philip K. Howard",
+      "link": "https://www.goodreads.com/review/show/7966629626?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1749820639l/236426398._SY75_.jpg"
+    },
+    {
+      "title": "Dare We Hope That All Men Be Saved?",
+      "author": "Hans Urs von Balthasar",
+      "link": "https://www.goodreads.com/review/show/7934105871?utm_medium=api&utm_source=rss",
+      "imageUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347667373l/638212._SY75_.jpg"
+    }
+  ],
+  "timestamp": 0
+}
