@@ -332,7 +332,7 @@ const FEATURED_ARTICLES = [
     title: 'The Ezra Klein Show: Santi Ruiz',
     publication: 'New York Times',
     url: 'https://www.nytimes.com/2025/03/25/opinion/ezra-klein-podcast-santi-ruiz.html',
-    image: 'https://static01.nyt.com/images/2025/03/25/multimedia/25ezra-klein-ruiz-qjvl/25ezra-klein-ruiz-qjvl-superJumbo.jpg'
+    image: 'https://image.simplecastcdn.com/images/47913775-afcf-4643-935f-31f1dcc86cfb/6a0e5e15-04a3-47c8-9c50-2f2fe8e84437/3000x3000/teks-album-20art-3000px.jpg'
   },
   {
     title: 'Technocapital Is Eating My Brains',
